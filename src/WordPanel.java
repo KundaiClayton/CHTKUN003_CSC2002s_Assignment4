@@ -88,7 +88,7 @@ public class WordPanel extends JPanel implements Runnable {
 			{   
 				
                 int i = 0;
-				for (;i<noWords;i++){
+				for (i=0;i<noWords;i++){
 					//create new thread
 					Thread n=new Thread(new Threadd(words[i]));
 					//start thread
@@ -102,9 +102,9 @@ public class WordPanel extends JPanel implements Runnable {
 				catch(InterruptedException e){
 						System.out.println(e);
 				}
-				
+				//reset i to 0
 				i=0;
-				for (;i<noWords;i++){
+				for (i=0;i<noWords;i++){
 					if(words[i].getY()+20 > maxY-10){
 						score.missedWord();
 						missed.setText("Missed:" + score.getMissed()+ "    ");
